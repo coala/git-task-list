@@ -1,0 +1,22 @@
+<div class="layout-align-center layout-row layout-wrap">
+  {{#each model as |issue|}}
+    {{#paper-card class="flex-gt-sm-30 flex-grow flex-gt-xs-45" as |card|}}
+      {{#card.title}}
+        <h3>{{issue.title}}</h3>
+      {{/card.title}}
+      {{#card.content class="layout-column"}}
+        {{issue.summary}}
+      {{/card.content}}
+      {{#card.actions class="layout-column"}}
+        {{#paper-button primary=true
+                        raised=true
+                        href=issue.html_url
+                        target="_blank"}}
+          {{paper-icon "check-circle" size=18}} Help It
+        {{/paper-button}}
+      {{/card.actions}}
+    {{/paper-card}}
+  {{/each}}
+</div>
+
+{{outlet}}

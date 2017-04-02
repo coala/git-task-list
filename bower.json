@@ -1,5 +1,7 @@
 {
   "name": "gsoc-prep-tasks",
   "dependencies": {
+    "remarkable": "^1.7.1",
+    "highlightjs": "^9.10.0"
   }
 }

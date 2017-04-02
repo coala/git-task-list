@@ -15,8 +15,10 @@
     "test": "ember test"
   },
   "devDependencies": {
+    "active-model-adapter": "^2.1.1",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^2.4.1",
+    "ember-browserify": "^1.1.13",
     "ember-cli": "2.12.1",
     "ember-cli-app-version": "^2.0.0",
     "ember-cli-babel": "^5.1.7",
@@ -26,19 +28,27 @@
     "ember-cli-htmlbars-inline-precompile": "^0.3.6",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-qunit": "^3.1.0",
+    "ember-cli-sass": "^6.1.2",
     "ember-cli-shims": "^1.0.2",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
-    "ember-data": "^2.12.0",
+    "ember-data": "^2.12.1",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.0",
+    "ember-paper": "^1.0.0-alpha.19",
+    "ember-remarkable": "^3.6.0",
     "ember-resolver": "^2.0.3",
     "ember-source": "~2.12.0",
     "ember-welcome-page": "^2.0.2",
+    "github-api": "https://github.com/github-tools/github/archive/v3.1.0.tar.gz",
     "loader.js": "^4.2.3"
   },
   "engines": {
     "node": ">= 4"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "github": "^9.2.0",
+    "github-api": "https://github.com/github-tools/github/archive/v3.1.0.tar.gz"
+  }
 }

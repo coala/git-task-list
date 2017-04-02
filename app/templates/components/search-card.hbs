@@ -1,0 +1,13 @@
+<div class="layout-column">
+  <form {{action "searchIssues" model on="submit"}}>
+    {{#paper-card as |card|}}
+      {{#card.content class="layout-column"}}
+        {{input placeholder="Search" type="text" value=model.q}}
+      {{/card.content}}
+      {{#card.actions class="layout-column"}}
+        {{#paper-button warn=true raised=true type="submit"}}Search{{/paper-button}}
+      {{/card.actions}}
+    {{/paper-card}}
+  </form>
+</div>
+{{yield}}
