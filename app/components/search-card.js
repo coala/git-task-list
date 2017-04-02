@@ -6,7 +6,12 @@ export default Ember.Component.extend({
       this.get('onSearch')(query);
     }
   },
+
+  owner: Ember.computed(function() {
+    return Ember.getOwner(this)
+  }),
+
   searchParams: Ember.computed('params.q', function() {
-    return this.get('params')['q'];
+    return this.get('owner').lookup('router:main').router.state.queryParams['q'];
   })
 });

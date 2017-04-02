@@ -2,8 +2,6 @@ import DS from 'ember-data';
 import Ember from 'ember';
 
 export default DS.Model.extend({
-  total_count: DS.attr(),
-  incomplete_results: DS.attr(),
   url: DS.attr(),
   repository_url: DS.attr(),
   labels_url: DS.attr(),
@@ -22,6 +20,8 @@ export default DS.Model.extend({
   closed_at: DS.attr(),
   body: DS.attr(),
   score: DS.attr(),
+  pullRequest: DS.attr(),
+
   summary: Ember.computed('body', function() {
     return this.get('body').slice(0, 30);
   })
