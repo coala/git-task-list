@@ -6,11 +6,14 @@ export default ActiveModelAdapter.extend({
   defaults: {
     sort: 'created',
     order: 'desc',
-    q: { state: 'open' }
+    q: '',
+    state: 'open'
   },
   query(store, type, query) {
-    query['q']     = Ember.assign(this.defaults['q'], query['q'])
-    const newQuery = Ember.assign(this.defaults, query);
-    return this._super(store, type, newQuery);
-  }
+    return this._super(
+      store,
+      type,
+      Ember.assign({}, this.defaults, query)
+    );
+  },
 });
