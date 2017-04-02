@@ -1,8 +1,8 @@
 <div class="layout-column">
-  <form {{action "searchIssues" model on="submit"}}>
+  <form {{action "searchIssues" searchParams on="submit"}}>
     {{#paper-card as |card|}}
       {{#card.content class="layout-column"}}
-        {{input placeholder="Search" type="text" value=model.q}}
+        {{input placeholder="Search" type="text" value=searchParams}}
       {{/card.content}}
       {{#card.actions class="layout-column"}}
         {{#paper-button warn=true raised=true type="submit"}}Search{{/paper-button}}

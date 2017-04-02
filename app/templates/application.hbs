@@ -17,17 +17,6 @@
       {{/paper-button}}
     {{/paper-toolbar-tools}}
   {{/paper-toolbar}}
-  <div class="layout-column">
-    <form {{action "searchIssues" query on="submit"}}>
-      {{#paper-card as |card|}}
-        {{#card.content class="layout-column"}}
-          {{input placeholder="Search" type="text" value=query}}
-        {{/card.content}}
-        {{#card.actions class="layout-column"}}
-          {{#paper-button warn=true raised=true type="submit"}}Search{{/paper-button}}
-        {{/card.actions}}
-      {{/paper-card}}
-    </form>
-  </div>
+  {{search-card onSearch=(action "searchIssues") params=model}}
   {{outlet}}
 </div>
