@@ -1,20 +1,11 @@
 <div class="layout-column">
   {{#paper-toolbar}}
     {{#paper-toolbar-tools}}
-      {{#paper-button iconButton=true}}
-        {{paper-icon "menu"}}
-      {{/paper-button}}
       <h2>
         <h1 class="hide-xs">GSOC Preparation Tasks</h1>
         <h1 class="hide-gt-xs">GSOC Tasks</h1>
       </h2>
       <span class="flex"></span>
-      {{#paper-button iconButton=true}}
-        {{paper-icon "search"}}
-      {{/paper-button}}
-      {{#paper-button iconButton=true class="hide-gt-xs"}}
-        {{paper-icon "more_vert"}}
-      {{/paper-button}}
     {{/paper-toolbar-tools}}
   {{/paper-toolbar}}
   {{search-card onSearch=(action "searchIssues") params=model}}
