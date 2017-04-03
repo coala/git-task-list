@@ -4,6 +4,11 @@ import Ember from 'ember';
 export default DS.Model.extend({
   url: DS.attr(),
   repository_url: DS.attr(),
+  repository: DS.belongsTo('repository'),
+  repository_id: Ember.computed('repository_url', function() {
+    const repoAry = this.get('repository_url').split('/');
+    return repoAry[a.length - 1] + '/' + repoAry[a.length - 2];
+  }),
   labels_url: DS.attr(),
   comments_url: DS.attr(),
   events_url: DS.attr(),
@@ -20,6 +25,7 @@ export default DS.Model.extend({
   closed_at: DS.attr(),
   body: DS.attr(),
   score: DS.attr(),
+  user: DS.attr(),
   pullRequest: DS.attr(),
 
   summary: Ember.computed('body', function() {

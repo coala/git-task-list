@@ -6,9 +6,8 @@ export default Ember.Route.extend({
       refreshModel: true
     }
   },
-  afterModel: (model) => model.reload,
   model(params) {
-    return this.issueOnly(this.store.query('issue', params));
+    return this.issueOnly(this.store.query('issue', params, { include: 'repository' }));
   },
   issueOnly(model) {
     return model.then((issues) => {

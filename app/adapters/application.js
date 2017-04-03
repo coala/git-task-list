@@ -2,21 +2,12 @@ import Ember from 'ember';
 import ActiveModelAdapter from 'active-model-adapter';
 
 export default ActiveModelAdapter.extend({
-  host: 'https://api.github.com/search',
-  defaults: {
-    sort: 'created',
-    order: 'desc',
-    q: 'state:open'
-  },
-  query(store, type, query) {
-    const q = query.q || ''
-    if(!(q).match(this.defaults.q || '')) {
-      query.q = q + ` ${this.defaults.q}`
+  host: 'https://api.github.com',
+  queryUrl: 'https://api.github.com/search',
+  buildURL(modelName, id, snapshot, requestType, query) {
+    if(requestType === 'query') {
+      this.host = this.queryUrl
     }
-    return this._super(
-      store,
-      type,
-      Ember.assign({}, this.defaults, query)
-    );
-  },
+    return this._super(...arguments);
+  }
 });
