@@ -4,7 +4,7 @@ Tools for searching issues on github. It can be filtered out only to return issu
 
 ## TO DO
 See more at [Project#1](https://github.com/bekicot/gsoc-prep-tasks/projects/1)
-- Adding more link for GSOC Organizations. See #6.
+- Adding more link for GSOC Organizations. See [Add a easy selector for GSOC org](https://github.com/bekicot/gsoc-prep-tasks/issues/6).
 
 ## Prerequisites
 
