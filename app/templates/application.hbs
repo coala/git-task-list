@@ -1,13 +1,40 @@
 <div class="layout-column">
-  {{#paper-toolbar}}
-    {{#paper-toolbar-tools}}
-      <h2>
-        <h1 class="hide-xs">GSOC Preparation Tasks</h1>
-        <h1 class="hide-gt-xs">GSOC Tasks</h1>
-      </h2>
-      <span class="flex"></span>
-    {{/paper-toolbar-tools}}
-  {{/paper-toolbar}}
-  {{search-card onSearch=(action "searchIssues") params=model}}
-  {{outlet}}
+  {{#paper-sidenav-container class="inner-sidenav"}}
+    {{#paper-sidenav
+      class="md-whiteframe-z2"
+      onToggle=(action (mut toggleSidenav))
+      position="left"
+      lockedOpen=toggleSidenav}}
+      {{#paper-toolbar as |toolbar|}}
+        {{#paper-toolbar-tools}}Task by Organizations{{/paper-toolbar-tools}}
+      {{/paper-toolbar}}
+      {{#paper-content primary=true padding=true}}
+        {{#each organizations as |org|}}
+            {{#paper-item class="md-3-line md-warn"
+                          onClick=(action "searchByOrg" org)}}
+              <div class="md-list-item-text">
+                <h3>{{org.name}}</h3>
+              </div>
+            {{/paper-item}}
+        {{/each}}
+      {{/paper-content}}
+    {{/paper-sidenav}}
+
+    {{#paper-card-content class="flex"}}
+      {{#paper-toolbar}}
+        {{#paper-toolbar-tools}}
+          {{#paper-button iconButton=true onClick=(action 'toggleSidenav')}}
+            {{paper-icon "menu"}}
+          {{/paper-button}}
+          <h2>
+            <h1 class="hide-xs">GSOC Preparation Tasks</h1>
+            <h1 class="hide-gt-xs">GSOC Tasks</h1>
+          </h2>
+          <span class="flex"></span>
+        {{/paper-toolbar-tools}}
+      {{/paper-toolbar}}
+      {{search-card onSearch=(action "searchIssues") params=model}}
+      {{outlet}}
+    {{/paper-card-content}}
+  {{/paper-sidenav-container}}
 </div>

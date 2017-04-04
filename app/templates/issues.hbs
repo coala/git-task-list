@@ -1,13 +1,13 @@
 {{#paper-card as |card|}}
   {{#card.actions}}
     {{#paper-checkbox value=groupByRepoVal onChange=(action 'groupByRepo' groupByRepoVal)}}
-      Toggle Group By Org
+      Toggle Group By Repository Name
     {{/paper-checkbox}}
   {{/card.actions}}
 {{/paper-card}}
 <div class="layout-align-center layout-gt-xs-row layout-wrap">
   {{#each model as |issue|}}
-    {{#paper-card class="flex-gt-sm-30 layout-nowrap" as |card|}}
+    {{#paper-card class="flex-gt-sm-45 layout-nowrap" as |card|}}
       {{#card.header as |head|}}
         {{#head.avatar}}
           <img src="{{issue.repository.owner.avatar_url}}" alt="{{issue.repository.owner.login}}">

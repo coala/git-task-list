@@ -37,6 +37,7 @@
     "ember-data-store-cache": "^1.0.0",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.6.0",
+    "ember-localforage-adapter": "^2.2.1",
     "ember-paper": "^1.0.0-alpha.19",
     "ember-read-more": "git+https://github.com/bekicot/ember-read-more.git",
     "ember-remarkable": "^3.6.0",
@@ -49,9 +50,5 @@
   "engines": {
     "node": ">= 4"
   },
-  "private": true,
-  "dependencies": {
-    "github": "^9.2.0",
-    "github-api": "https://github.com/github-tools/github/archive/v3.1.0.tar.gz"
-  }
+  "private": true
 }

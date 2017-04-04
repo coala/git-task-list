@@ -6,7 +6,13 @@ export default Ember.Route.extend({
       this.transitionTo('issues', { queryParams: { q: query} });
     }
   },
-  model(params) {
-    return params;
+
+  setupController(controller, model) {
+    controller.set('organizations', [{
+      name: 'Discourse',
+      query: { q: 'is:open is:issue user:discourse' },
+    }]);
+    this._super(controller, model);
   }
+
 });

@@ -2,6 +2,10 @@
 
 Tools for searching issues on github. It can be filtered out only to return issues that suitable for you to contribute.
 
+## TO DO
+See more at [Project#1](https://github.com/bekicot/gsoc-prep-tasks/projects/1)
+- Adding more link for GSOC Organizations. See #6.
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
