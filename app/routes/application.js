@@ -14,6 +14,15 @@ export default Ember.Route.extend({
     }, {
       name: 'Wikimedia',
       query: { q: 'is:open is:issue user:wikimedia' },
+    }, {
+      name: 'Cadasta',
+      query: { q: 'is:open is:issue user:cadasta' },
+    }, {
+      name: 'Enketo',
+      query: { q: 'is:open is:issue user:enket' },
+    }, {
+      name: 'KoboToolBox',
+      query: { q: 'is:open is:issue user:kobotoolbox' },
     }]);
     this._super(controller, model);
   }
