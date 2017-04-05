@@ -11,6 +11,9 @@ export default Ember.Route.extend({
     controller.set('organizations', [{
       name: 'Discourse',
       query: { q: 'is:open is:issue user:discourse' },
+    }, {
+      name: 'Wikimedia',
+      query: { q: 'is:open is:issue user:wikimedia' },
     }]);
     this._super(controller, model);
   }
