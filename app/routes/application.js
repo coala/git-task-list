@@ -17,6 +17,18 @@ export default Ember.Route.extend({
     }, {
       name: 'Elm',
       query: {q: 'is:open is:issue user:elm-lang'},
+    }, {
+      name: 'coala',
+      query: { q: 'is:open is:issue user:coala label:difficulty/newcomer no:assignee' },
+    }, {
+      name: 'Cadasta',
+      query: { q: 'is:open is:issue user:cadasta' },
+    }, {
+      name: 'Enketo',
+      query: { q: 'is:open is:issue user:enket' },
+    }, {
+      name: 'KoboToolBox',
+      query: { q: 'is:open is:issue user:kobotoolbox' },
     }]);
     this._super(controller, model);
   }
