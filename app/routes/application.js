@@ -14,6 +14,9 @@ export default Ember.Route.extend({
     }, {
       name: 'Wikimedia',
       query: { q: 'is:open is:issue user:wikimedia' },
+    }, {
+      name: 'openSUSE',
+      query: { q: 'is:open is:issue user:opensuse' },
     }]);
     this._super(controller, model);
   }
