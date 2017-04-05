@@ -14,6 +14,9 @@ export default Ember.Route.extend({
     }, {
       name: 'Wikimedia',
       query: { q: 'is:open is:issue user:wikimedia' },
+    }, {
+      name: 'coala'
+      query: { q: 'is:open is:issue user:coala label:difficulty/newcomer no:assignee' },
     }]);
     this._super(controller, model);
   }
