@@ -32,6 +32,9 @@ export default Ember.Route.extend({
     }, {
       name: 'KoboToolBox',
       query: { q: 'is:open is:issue user:kobotoolbox' },
+    }, {
+      name: 'MovingBlocks',
+      query: { q: 'is:open is:issue user:movingblocks' },
     }]);
     this._super(controller, model);
   }
