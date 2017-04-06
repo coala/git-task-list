@@ -28,7 +28,7 @@ export default Ember.Route.extend({
       query: { q: 'is:open is:issue user:cadasta' },
     }, {
       name: 'Enketo',
-      query: { q: 'is:open is:issue user:enket' },
+      query: { q: 'is:open is:issue user:enketo' },
     }, {
       name: 'KoboToolBox',
       query: { q: 'is:open is:issue user:kobotoolbox' },
