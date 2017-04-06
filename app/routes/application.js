@@ -35,6 +35,9 @@ export default Ember.Route.extend({
     }, {
       name: 'MovingBlocks',
       query: { q: 'is:open is:issue user:movingblocks' },
+    }, {
+      name: 'AboutCode',
+      query: { q: 'is:open is:issue user:nexB' },    
     }]);
     this._super(controller, model);
   }
