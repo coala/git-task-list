@@ -1,5 +1,5 @@
 <div class="layout-column">
-  {{#paper-sidenav-container class="inner-sidenav"}}
+  {{#paper-sidenav-container class="gsoc-organizations-list"}}
     {{#paper-sidenav
       class="md-whiteframe-z2"
       onToggle=(action (mut toggleSidenav))
@@ -10,12 +10,9 @@
       {{/paper-toolbar}}
       {{#paper-content primary=true padding=true}}
         {{#each organizations as |org|}}
-            {{#paper-item class="md-3-line md-warn"
-                          onClick=(action "searchByOrg" org)}}
-              <div class="md-list-item-text">
-                <h3>{{org.name}}</h3>
-              </div>
-            {{/paper-item}}
+          {{#paper-item onClick=(action "searchByOrg" org)}}
+            <h4>{{org.name}}</h4>
+          {{/paper-item}}
         {{/each}}
       {{/paper-content}}
     {{/paper-sidenav}}

@@ -1,7 +1,7 @@
 import ApplicationSerializer from './application';
 
 export default ApplicationSerializer.extend({
-  keyForRelationship(key, rel) {
+  keyForRelationship(key) {
     return key + '_url';
   },
   keyForLink(key, rel) {
@@ -11,7 +11,7 @@ export default ApplicationSerializer.extend({
     return this._super(...arguments);
   },
   normalizeArrayResponse(store, primaryModelClass, payload) {
-    payload.items.forEach((val, index) => {
+    payload.items.forEach((val) => {
       val.links = { repository_url: val.repository_url}
       return val;
     })
