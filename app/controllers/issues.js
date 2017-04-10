@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    groupByRepo(val) {
+    groupByRepo() {
       this.groupModelByRepo();
       this.set('groupByRepoVal', !this.get('groupByRepoVal'));
     }

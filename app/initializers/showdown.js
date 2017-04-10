@@ -1,3 +1,4 @@
+/* global showdown */
 export function initialize() {
   showdown.setFlavor('github');
   showdown.extension("issueWrap", function() {

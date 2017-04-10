@@ -1,12 +1,19 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  queryParams: {
+    q: {
+      refreshModel: true
+    }
+  },
   actions: {
     searchIssues(query) {
       this.transitionTo('issues', { queryParams: { q: query} });
     }
   },
-
+  model(params) {
+    return params;
+  },
   setupController(controller, model) {
     controller.set('organizations', [{
       name: 'Discourse',
@@ -37,8 +44,9 @@ export default Ember.Route.extend({
       query: { q: 'is:open is:issue user:movingblocks' },
     }, {
       name: 'AboutCode',
-      query: { q: 'is:open is:issue user:nexB' },    
+      query: { q: 'is:open is:issue user:nexB' },
     }]);
+    controller.set('searchParams', model.q)
     this._super(controller, model);
   }
 

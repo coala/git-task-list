@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import ApplicationAdapter from './application';
 
 export default ApplicationAdapter.extend({
@@ -18,7 +19,4 @@ export default ApplicationAdapter.extend({
       Ember.assign({}, this.defaults, query)
     );
   },
-  urlForFindBelongsTo() {
-    debugger
-  }
 });
