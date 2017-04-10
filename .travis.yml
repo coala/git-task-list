@@ -19,6 +19,19 @@ before_install:
 install:
   - npm install
   - bower install
+  - npm install -g ember
 
 script:
   - npm test
+
+before_deploy:
+  - ember build --environment=production
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+  name: Yana Agun Siswanto
+  email: yana.developer@gmail.com
