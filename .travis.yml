@@ -19,13 +19,13 @@ before_install:
 install:
   - npm install
   - bower install
-  - npm install -g ember
+  - npm install -g ember-cli
 
 script:
   - npm test
 
 before_deploy:
-  - ember build --environment=production
+  - ember build --env production
 
 deploy:
   provider: pages
