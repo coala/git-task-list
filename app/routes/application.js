@@ -45,6 +45,21 @@ export default Ember.Route.extend({
     }, {
       name: 'AboutCode',
       query: { q: 'is:open is:issue user:nexB' },
+    }, {
+      name: 'CheckerFramework',
+      query: { q: 'is:open is:issue user:typetools' },
+    }, {
+      name: 'Checkstyle',
+      query: { q: 'is:open is:issue user:checkstyle' },
+    }, {
+      name: 'PMD',
+      query: { q: 'is:open is:issue user:pmd' },
+    }, {
+      name: 'differ',
+      query: { q: 'is:open is:issue repo:moravianlibrary/differ' },
+    }, {
+      name: 'LanguageTool',
+      query: { q: 'is:open is:issue user:languagetool-org' },
     }]);
     controller.set('searchParams', model.q)
     this._super(controller, model);
