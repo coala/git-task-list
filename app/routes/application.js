@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import organizationList from '../organizations';
 
 export default Ember.Route.extend({
   queryParams: {
@@ -15,52 +16,7 @@ export default Ember.Route.extend({
     return params;
   },
   setupController(controller, model) {
-    controller.set('organizations', [{
-      name: 'Discourse',
-      query: { q: 'is:open is:issue user:discourse' },
-    }, {
-      name: 'Wikimedia',
-      query: { q: 'is:open is:issue user:wikimedia' },
-    }, {
-      name: 'openSUSE',
-      query: { q: 'is:open is:issue user:opensuse' },
-    }, {
-      name: 'Elm',
-      query: {q: 'is:open is:issue user:elm-lang'},
-    }, {
-      name: 'coala',
-      query: { q: 'is:open is:issue user:coala label:difficulty/newcomer no:assignee' },
-    }, {
-      name: 'Cadasta',
-      query: { q: 'is:open is:issue user:cadasta' },
-    }, {
-      name: 'Enketo',
-      query: { q: 'is:open is:issue user:enketo' },
-    }, {
-      name: 'KoboToolBox',
-      query: { q: 'is:open is:issue user:kobotoolbox' },
-    }, {
-      name: 'MovingBlocks',
-      query: { q: 'is:open is:issue user:movingblocks' },
-    }, {
-      name: 'AboutCode',
-      query: { q: 'is:open is:issue user:nexB' },
-    }, {
-      name: 'CheckerFramework',
-      query: { q: 'is:open is:issue user:typetools' },
-    }, {
-      name: 'Checkstyle',
-      query: { q: 'is:open is:issue user:checkstyle' },
-    }, {
-      name: 'PMD',
-      query: { q: 'is:open is:issue user:pmd' },
-    }, {
-      name: 'differ',
-      query: { q: 'is:open is:issue repo:moravianlibrary/differ' },
-    }, {
-      name: 'LanguageTool',
-      query: { q: 'is:open is:issue user:languagetool-org' },
-    }]);
+    controller.set('organizations', organizationList);
     controller.set('searchParams', model.q)
     this._super(controller, model);
   }
