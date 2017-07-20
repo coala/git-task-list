@@ -5,7 +5,7 @@
     {{/paper-checkbox}}
   {{/card.actions}}
 {{/paper-card}}
-<div class="layout-align-center layout-gt-xs-row layout-wrap">
+<div class="layout-align-center layout-gt-sm-row layout-wrap">
   {{#each model as |issue|}}
     {{#paper-card class="flex-gt-sm-45 layout-nowrap" as |card|}}
       {{#card.header as |head|}}
@@ -14,7 +14,9 @@
         {{/head.avatar}}
         {{#head.text as |text|}}
           {{#text.title}}
-            <h3>{{issue.repository.name}}</h3>
+            <h3>
+              <a href="http://github.com/{{issue.repository.owner.login}}">{{issue.repository.owner.login}}</a>/<a href="http://github.com/{{issue.repository.owner.login}}/{{issue.repository.name}}">{{issue.repository.name}}</a>
+            </h3>
           {{/text.title}}
         {{/head.text}}
       {{/card.header}}
@@ -26,14 +28,12 @@
           {{markdown-to-html markdown=issue.body extensions='issueWrap'}}
         {{/read-more}}
       {{/card.content}}
-      {{#card.actions class="layout-column"}}
-        {{#paper-button primary=true
-                        raised=true
-                        href=issue.html_url
-                        target="_blank"}}
-          {{paper-icon "check-circle" size=18}} Help It
-        {{/paper-button}}
-      {{/card.actions}}
+      {{#paper-button primary=true
+                      raised=true
+                      href=issue.html_url
+                      target="_blank"}}
+        {{paper-icon "check-circle" size=18}} Help It
+      {{/paper-button}}
     {{/paper-card}}
   {{/each}}
 </div>

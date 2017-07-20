@@ -8,6 +8,7 @@ export default DS.Model.extend({
     const repoAry = this.get('repository_url').split('/');
     return repoAry[repoAry.length - 1] + '/' + repoAry[repoAry.length - 2];
   }),
+  repository: DS.belongsTo(),
   labels_url: DS.attr(),
   comments_url: DS.attr(),
   events_url: DS.attr(),
