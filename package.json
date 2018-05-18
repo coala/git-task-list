@@ -33,6 +33,7 @@
     "ember-cli-showdown": "^3.0.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
+    "ember-cli-update": "^0.21.4",
     "ember-data": "^2.12.1",
     "ember-data-store-cache": "^1.0.0",
     "ember-export-application-global": "^1.0.5",
