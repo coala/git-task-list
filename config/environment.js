@@ -1,11 +1,11 @@
-/* eslint-env node */
+'use strict';
 
 module.exports = function(environment) {
-  var ENV = {
-    modulePrefix: 'gsoc-prep-tasks',
-    environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
+  let ENV = {
+    APP: {
+      // Here you can pass flags/options to your application instance
+      // when it is created
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -17,10 +17,13 @@ module.exports = function(environment) {
       },
       // LOG_STACKTRACE_ON_DEPRECATION: false,
     },
+    environment: environment,
+    locationType: 'auto',
 
-    APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+    modulePrefix: 'gsoc-prep-tasks',
+    rootURL: '/',
+    showdown: {
+      simplifiedAutoLink: true
     }
   };
 
@@ -41,6 +44,7 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {

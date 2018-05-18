@@ -23,11 +23,7 @@
       {{#card.title class="flex-nogrow"}}
         <h3>{{issue.title}}</h3>
       {{/card.title}}
-      {{#card.content class="layout-column flex-grow"}}
-        {{#read-more class="flex-nogrow" maxHeight="350px"}}
-          {{markdown-to-html markdown=issue.body extensions='issueWrap'}}
-        {{/read-more}}
-      {{/card.content}}
+
       {{#paper-button primary=true
                       raised=true
                       href=issue.html_url

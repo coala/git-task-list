@@ -1,10 +1,10 @@
 import DS from 'ember-data';
-import Ember from 'ember';
+import { computed } from '@ember/object';
 
 export default DS.Model.extend({
   url: DS.attr(),
   repository_url: DS.attr(),
-  repository_id: Ember.computed('repository_url', function() {
+  repository_id: computed('repository_url', function() {
     const repoAry = this.get('repository_url').split('/');
     return repoAry[repoAry.length - 1] + '/' + repoAry[repoAry.length - 2];
   }),
@@ -28,7 +28,7 @@ export default DS.Model.extend({
   user: DS.attr(),
   pullRequest: DS.attr(),
 
-  summary: Ember.computed('body', function() {
+  summary: computed('body', function() {
     return this.get('body').slice(0, 30);
   })
 });

@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 import organizationList from '../organizations';
 
-export default Ember.Route.extend({
+export default Route.extend({
   queryParams: {
     q: {
       refreshModel: true
