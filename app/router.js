@@ -3,12 +3,12 @@ import config from './config/environment';
 
 const Router = EmberRouter.extend({
   location: config.locationType,
-  rootURL: config.rootURL
+  rootURL: config.rootURL,
 });
 
-Router.map(function() {
-  this.route('issues', function() {
-    this.route('issue', {path: "/post/:issue_id"});
+Router.map(function mainRoute() {
+  return this.route('tasks', function tasksRoute() {
+    this.route('github');
   });
 });
 

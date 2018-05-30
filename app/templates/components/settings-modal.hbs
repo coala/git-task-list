@@ -1,0 +1,24 @@
+<div class="modal-background" onclick={{action "hideModal"}}></div>
+<div class="modal-content">
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">User Settings</p>
+      <button class="delete" aria-label="close" onclick={{action "hideModal"}}></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="field">
+        <label class="label">GitHub Token</label>
+        <div class="control">
+          {{input class="input" value=token_github_com}}
+        </div>
+        <p class="help is-danger">In order to fetch results from GitHub, you must specify GitHub token. With ANY scope you like. No exact scope is required.</p>
+        <p class="help">Get GitHub user token from <a href="https://github.com/settings/tokens" title="https://github.com/settings/tokens" target="_blank">https://github.com/settings/tokens</a></p>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success" onclick={{action "saveSettings"}}>Save</button>
+      <button class="button" onclick={{action "hideModal"}}>Close</button>
+    </footer>
+  </div>
+</div>
+<button class="modal-close is-large" aria-label="close" onclick={{action "hideModal"}}></button>

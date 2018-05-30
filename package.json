@@ -17,16 +17,17 @@
     "test": "COVERAGE=true ember test"
   },
   "devDependencies": {
-    "active-model-adapter": "^2.1.1",
+    "@fortawesome/ember-fontawesome": "^0.1.0-8",
+    "@fortawesome/free-solid-svg-icons": "^5.1.0-8",
     "bower": "^1.8.4",
     "broccoli-asset-rev": "^2.4.5",
     "codecov": "^3.0.2",
     "ember-ajax": "^3.0.0",
-    "ember-browserify": "^1.1.13",
     "ember-cli": "~3.1.4",
     "ember-cli-app-version": "^3.2.0",
     "ember-cli-babel": "^6.6.0",
-    "ember-cli-code-coverage": "^0.4.2",
+    "ember-cli-cjs-transform": "^1.2.0",
+    "ember-cli-code-coverage": "^1.0.0-beta.4",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
     "ember-cli-htmlbars": "^2.0.1",
@@ -40,11 +41,10 @@
     "ember-cli-update": "^0.21.4",
     "ember-data": "~3.1.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-paper": "^1.0.0-alpha.19",
     "ember-source": "~3.1.0",
     "eslint": "^4.19.1",
     "eslint-plugin-ember": "^5.0.0",
-    "github-api": "https://github.com/github-tools/github/archive/v3.1.0.tar.gz",
+    "eslint-plugin-import": "^2.7.0",
     "loader.js": "^4.2.3",
     "remark": "^9.0.0",
     "remark-cli": "^5.0.0",
@@ -54,10 +54,14 @@
     "node": "^4.5 || 6.* || >= 7.*"
   },
   "dependencies": {
+    "bulma": "^0.7.1",
     "ember-cli-showdown": "^4.4.2",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
     "ember-resolver": "^4.5.5",
-    "minimatch": "^3.0.3"
+    "graphql-request": "^1.6.0",
+    "linkifyjs": "^2.1.6",
+    "minimatch": "^3.0.3",
+    "moment": "^2.22.1"
   }
 }

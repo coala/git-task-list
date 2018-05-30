@@ -1,37 +1,23 @@
-<div class="layout-column">
-  {{#paper-sidenav-container class="gsoc-organizations-list"}}
-    {{#paper-sidenav
-      class="md-whiteframe-z2"
-      onToggle=(action (mut toggleSidenav))
-      position="left"
-      lockedOpen=toggleSidenav}}
-      {{#paper-toolbar as |toolbar|}}
-        {{#paper-toolbar-tools}}Task by Organizations{{/paper-toolbar-tools}}
-      {{/paper-toolbar}}
-      {{#paper-content primary=true padding=true}}
-        {{#each organizations as |org|}}
-          {{#paper-item onClick=(action "searchByOrg" org)}}
-            <h4>{{org.name}}</h4>
-          {{/paper-item}}
-        {{/each}}
-      {{/paper-content}}
-    {{/paper-sidenav}}
-
-    {{#paper-card-content class="flex search-results"}}
-      {{#paper-toolbar}}
-        {{#paper-toolbar-tools}}
-          {{#paper-button iconButton=true onClick=(action 'toggleSidenav')}}
-            {{paper-icon "menu"}}
-          {{/paper-button}}
-          <h2>
-            <h1 class="hide-xs">GSOC Preparation Tasks</h1>
-            <h1 class="hide-gt-xs">GSOC Tasks</h1>
-          </h2>
-          <span class="flex"></span>
-        {{/paper-toolbar-tools}}
-      {{/paper-toolbar}}
-      {{search-card onSearch=(action "searchIssues") params=searchParams}}
-      {{outlet}}
-    {{/paper-card-content}}
-  {{/paper-sidenav-container}}
-</div>
+{{#settings-modal isActive=showModal}}{{/settings-modal}}
+<nav class="main-navbar navbar is-transparent">
+  <div class="navbar-brand">
+    {{#link-to "application" class="navbar-item"}}
+      Git Task List
+    {{/link-to}}
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <a href="#" onclick={{action "showSettingsModal"}}>{{fa-icon 'cog' size="2x"}}</a>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <a href="#" onclick={{action "showSettingsModal"}}>{{fa-icon 'cog' size="2x"}}</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="section">
+  <div class="container">
+    {{outlet}}
+  </div>
+</section>

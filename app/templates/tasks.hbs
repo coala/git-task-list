@@ -1,0 +1,34 @@
+<div class="columns">
+  <section class="container column is-one-quarter">
+    <aside class="menu">
+      {{#if currentOrg }}
+        <p class="menu-label">
+          Current Organization
+        </p>
+        <ul class="menu-list">
+          <li><a>{{currentOrg.name}}</a></li>
+        </ul>
+      {{/if}}
+      <p class="menu-label">
+        Organizations
+      </p>
+      <ul class="menu-list">
+        {{#each-in organizations.list as |slug org|}}
+          <li>
+            {{#link-to (query-params org=slug labels=null)}}
+              {{org.name}}
+            {{/link-to}}
+          </li>
+        {{/each-in}}
+      </ul>
+    </aside>
+  </section>
+  <div class="column is-three-quarters">
+    <nav class="panel">
+      <p class="panel-tabs is-size-4">
+        <a class="is-active {{if isGithubpage "disabled"}}">GitHub</a>
+      </p>
+    </nav>
+    {{outlet}}
+  </div>
+</div>

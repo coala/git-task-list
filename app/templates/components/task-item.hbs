@@ -1,0 +1,42 @@
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      {{task.title}}
+    </p>
+    <a href="{{task.url}}" target="_blank" class="card-header-icon" aria-label="more options">
+      <span class="icon">
+        {{#if task.isPullRequest}}
+          {{fa-icon 'code-branch'}}
+        {{else}}
+          {{fa-icon 'bug'}}
+        {{/if}}
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+    <div class="content">
+      {{truncate-text task.bodyText limit=350}}
+    </div>
+    <time title="{{task.updatedAt}}">{{time-ago task.updatedAt}}</time>
+    <div class="tags">
+      {{#each task.labels as |label|}}
+        <span class="tag" style="color: {{label.fontColor}}; background-color: #{{label.color}}">
+          {{label.name}}
+        </span>
+      {{/each}}
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a href="{{task.repository.url}}" class="card-footer-item" target="_blank">
+      {{task.repository.nameWithOwner}}
+    </a>
+    <a href="{{task.author.url}}" class="card-footer-item" target="_blank">
+      <figure class="org-icon">
+        <img src="{{task.author.avatarUrl}}" alt="">
+      </figure>
+      &nbsp;
+      {{task.author.login}}
+    </a>
+    <a href="{{task.url}}" class="card-footer-item" target="_blank">Open</a>
+  </footer>
+</div>

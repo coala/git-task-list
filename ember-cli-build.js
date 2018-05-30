@@ -20,6 +20,25 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  app.import('node_modules/graphql-request/dist/src/index.js', {
+    using: [
+      { transformation: 'cjs', as: 'graphql-request' },
+    ],
+  });
+
+  app.import('node_modules/linkifyjs/dist/linkify.js');
+  app.import('node_modules/linkifyjs/dist/linkify-jquery.js');
+  app.import('node_modules/linkifyjs/dist/linkify-plugin-mention.js');
+
+  app.import('node_modules/moment/moment.js', {
+    using: [
+      { transformation: 'amd', as: 'moment' },
+    ],
+  });
+
   app.import('node_modules/showdown/dist/showdown.js');
+
+  app.import('node_modules/bulma/css/bulma.css');
+
   return app.toTree();
 };

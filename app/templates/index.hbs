@@ -1,0 +1,15 @@
+<div class="columns is-multiline">
+  {{#each-in model as |slug organization|}}
+    <div class="column is-one-third">
+      {{#link-to 'tasks' (query-params org=slug) tagName='div' class="card organization-card"}}
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-6">{{truncate-text organization.name limit="45"}}</p>
+            </div>
+          </div>
+        </div>
+      {{/link-to}}
+    </div>
+  {{/each-in}}
+</div>
