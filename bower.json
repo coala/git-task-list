@@ -1,5 +1,5 @@
 {
-  "name": "gsoc-prep-tasks",
+  "name": "git-task-list",
   "dependencies": {
     "highlightjs": "^9.10.0",
     "showdown": "^1.6.4",

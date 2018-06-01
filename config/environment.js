@@ -20,7 +20,7 @@ module.exports = function(environment) {
     environment: environment,
     locationType: 'auto',
 
-    modulePrefix: 'gsoc-prep-tasks',
+    modulePrefix: 'git-task-list',
     rootURL: '/',
     showdown: {
       simplifiedAutoLink: true
@@ -49,7 +49,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
-    ENV.rootURL = ENV.rootURL + ENV.modulePrefix;
+    ENV.rootURL = ENV.rootURL + (process.env.PATH_PREFIX || '');
   }
 
   return ENV;
