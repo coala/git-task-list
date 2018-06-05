@@ -1,0 +1,16 @@
+overrides: coala.yaml
+
+language: node
+gitignore_extra_rulesets:
+  - sass
+  - emberjs
+
+configuration:
+  template_dir:
+    - .moban.dt/
+    - ../coala-mobans/templates/
+    - ../coala-mobans/assets/
+  configuration: .moban.yaml
+  configuration_dir: ../coala-mobans/
+targets:
+  - .gitignore: coala-gitignore.jj2
