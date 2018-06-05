@@ -3,8 +3,10 @@
 Tools for searching issues on github. It can be filtered out only to return issues that suitable for you to contribute.
 
 ## TO DO
+
 See more at [Project#1](https://github.com/bekicot/gsoc-prep-tasks/projects/1)
-- Adding more link for GSOC Organizations. See [Add a easy selector for GSOC org](https://github.com/bekicot/gsoc-prep-tasks/issues/6).
+
+* Adding more link for GSOC Organizations. See [Add a easy selector for GSOC org](https://github.com/bekicot/gsoc-prep-tasks/issues/6).
 
 ## Prerequisites
 
@@ -26,8 +28,7 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
+* Visit your app at <http://localhost:4200>.
 
 ### Running Tests
 
@@ -38,7 +39,6 @@ You will need the following things properly installed on your computer.
 
 * `ember build` (development)
 * `ember build --environment production` (production)
-
 
 ## Further Reading / Useful Links
 

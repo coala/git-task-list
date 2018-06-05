@@ -8,7 +8,7 @@ sudo: false
 cache:
   directories:
     - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
+    - $HOME/.cache  # includes bowers cache
 
 .disable_global: &disable_global
   node_js: false
@@ -33,6 +33,19 @@ jobs:
       install: pip install moban
       script: .ci/check_moban.sh
 
+    - <<: *disable_global
+      stage: lint
+      language: python
+      python: 3.6
+      cache: pip
+      before_install:
+        - export PATH=$PATH:./node_modules/.bin
+        - export NODE_PATH=$NODE_PATH:./node_modules
+      install:
+        - pip install coala-bears
+        - npm install
+      script: coala --non-interactive -V
+
 before_install:
   - npm config set spin false
 
@@ -52,7 +65,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  on:
+  "on":
     branch: master
   local_dir: dist
   name: Yana Agun Siswanto

@@ -1,0 +1,28 @@
+[all]
+ignore = node_modules/**, bower_components/**, dist/**, tmp/**, .git/**
+
+[all.SpaceConsistencyBear]
+files = **.js, **.json, **.yml, **.md
+bears = SpaceConsistencyBear
+use_spaces = true
+
+[all.json]
+bears = JSONFormatBear
+files = **.json
+indent_size = 2
+
+[all.js]
+bears = ESLintBear
+eslint_config = .eslintrc.js
+files = **.js
+# See https://github.com/coala/coala-bears/issues/2533
+ignore += .eslintrc.js
+
+[all.markdown]
+bears = MarkdownBear
+files = **.md
+bullets = *
+
+[all.yaml]
+bears = YAMLLintBear
+files = **.yml, **.yaml
