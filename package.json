@@ -14,17 +14,19 @@
     "build": "ember build",
     "lint:js": "eslint ./*.js app blueprints config lib server tests",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "COVERAGE=true ember test"
   },
   "devDependencies": {
     "active-model-adapter": "^2.1.1",
     "bower": "^1.8.4",
     "broccoli-asset-rev": "^2.4.5",
+    "codecov": "^3.0.2",
     "ember-ajax": "^3.0.0",
     "ember-browserify": "^1.1.13",
     "ember-cli": "~3.1.4",
     "ember-cli-app-version": "^3.2.0",
     "ember-cli-babel": "^6.6.0",
+    "ember-cli-code-coverage": "^0.4.2",
     "ember-cli-dependency-checker": "^2.0.0",
     "ember-cli-eslint": "^4.2.1",
     "ember-cli-htmlbars": "^2.0.1",
