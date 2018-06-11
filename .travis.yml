@@ -23,6 +23,8 @@ jobs:
       install: pip install moban
       before_script: false
       script: .ci/check_moban.sh
+      after_success: false
+      before_deploy: false
 
 before_install:
   - npm config set spin false
