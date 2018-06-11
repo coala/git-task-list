@@ -10,21 +10,28 @@ cache:
     - $HOME/.npm
     - $HOME/.cache # includes bowers cache
 
+.disable_global: &disable_global
+  node_js: false
+  cache: false
+  before_install: false
+  install: false
+  before_script: false
+  script: false
+  after_success: false
+  before_deploy: false
+  deploy: false
+
 # env forces jobs to be created from the top level settings
 env:
 jobs:
   include:
-    - stage: moban
+    - <<: *disable_global
+      stage: moban
       language: python
       python: 3.6
-      node_js: false
       cache: pip
-      before_install: false
       install: pip install moban
-      before_script: false
       script: .ci/check_moban.sh
-      after_success: false
-      before_deploy: false
 
 before_install:
   - npm config set spin false
