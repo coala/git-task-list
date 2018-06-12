@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = function(environment) {
-  let ENV = {
+module.exports = function environmentConfig(environment) {
+  const ENV = {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -13,18 +13,18 @@ module.exports = function(environment) {
       },
       EXTEND_PROTOTYPES: {
         // Prevent Ember Data from overriding Date.parse.
-        Date: false
+        Date: false,
       },
       // LOG_STACKTRACE_ON_DEPRECATION: false,
     },
-    environment: environment,
+    environment,
     locationType: 'auto',
 
     modulePrefix: 'git-task-list',
     rootURL: '/',
     showdown: {
-      simplifiedAutoLink: true
-    }
+      simplifiedAutoLink: true,
+    },
   };
 
   if (environment === 'development') {
@@ -49,7 +49,7 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
-    ENV.rootURL = ENV.rootURL + (process.env.PATH_PREFIX || '');
+    ENV.rootURL += (process.env.PATH_PREFIX || '');
   }
 
   return ENV;
