@@ -2,7 +2,7 @@
 ignore = node_modules/**, bower_components/**, dist/**, tmp/**, .git/**
 
 [all.SpaceConsistencyBear]
-files = **.js, **.json, **.yml, **.md
+files = **.js, **.json, **.yml, **.yaml, **.md
 bears = SpaceConsistencyBear
 use_spaces = true
 
